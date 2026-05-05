@@ -1,0 +1,29 @@
+project: Land Tenure & Property Dispute Resolution System
+targets:
+  - Nigeria
+  - West Africa Land Registries
+
+data:
+  parcel_records: "data/raw/land_parcels.csv"
+  ownership_history: "data/raw/ownership_records.csv"
+  satellite_classification: "data/raw/land_use_classification.csv"
+  shapefile: "data/raw/nigeria_boundaries.shp"
+
+model:
+  algorithm: GradientBoostingClassifier
+  n_estimators: 250
+  max_depth: 8
+  learning_rate: 0.05
+  test_size: 0.2
+  random_state: 42
+
+thresholds:
+  high_dispute_risk: 0.72
+  medium_dispute_risk: 0.42
+  low_dispute_risk: 0.0
+
+output:
+  dispute_map: "outputs/land_dispute_map.html"
+  model_path: "models/land_dispute_model.pkl"
+  report: "outputs/land_dispute_report.csv"
+  overlap_analysis: "outputs/boundary_overlap_analysis.png"
