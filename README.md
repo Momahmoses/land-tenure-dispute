@@ -1,51 +1,79 @@
 # Land Tenure & Property Dispute Resolution System
 
-A GIS + machine learning system that digitizes land parcel boundaries, flags overlapping or contested parcels, and prioritizes resolution cases — tackling Nigeria's land administration crisis with data-driven dispute detection.
+[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://python.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+GIS + ML system that digitises land parcel boundaries, flags overlapping or contested parcels, and prioritises resolution cases — tackling Nigeria's land administration crisis with data-driven dispute detection and resolution scheduling.
+
+---
+
+## Problem Statement
+
+Nigeria's land administration system is severely fragmented, enabling rampant land grabbing, double allocation, and boundary disputes. This system provides automated dispute detection and resolution prioritisation to support land registries and courts.
+
+---
 
 ## Features
-- Synthetic land parcel dataset (3,000 parcels) with boundary, ownership, and documentation features
-- Gradient Boosting dispute probability model
-- Resolution urgency scoring (boundary overlap × area × prior disputes)
-- Interactive dispute risk heatmap with per-parcel details
-- State-level and land-use-level dispute analysis
+
+| Feature | Description |
+|---------|-------------|
+| 3,000 Parcel Synthetic Dataset | Boundary, ownership, documentation, and dispute features |
+| Gradient Boosting Dispute Model | Probability score per parcel |
+| Resolution Urgency Scoring | Boundary overlap × area × prior disputes |
+| Interactive Dispute Risk Map | Folium heatmap with per-parcel details |
+| State & Land-Use Analysis | Dispute rate breakdown by state and land-use type |
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Machine Learning | scikit-learn (Gradient Boosting) |
+| Geospatial | GeoPandas, Folium |
+| Data | pandas, NumPy |
+| Visualisation | Matplotlib, Seaborn, Plotly |
+
+---
 
 ## Project Structure
+
 ```
 land-tenure-dispute/
 ├── src/
-│   ├── data_loader.py    # Parcel data generation, dispute risk classification
-│   ├── model.py          # GBM dispute predictor, resolution prioritization
-│   └── visualize.py      # Dispute map, overlap analysis charts
-├── data/raw/             # Land parcel records, ownership history, satellite classification
-├── models/               # Saved model artifacts
-├── outputs/              # Maps, reports, charts
-├── config.yaml
-├── main.py
+│   ├── data_loader.py     # Parcel data generation and dispute risk classification
+│   ├── model.py           # GBM dispute predictor, resolution prioritisation
+│   └── visualize.py       # Dispute map and overlap analysis charts
+├── data/raw/              # Land parcel records, ownership history
+├── models/                # Saved model artifacts
+├── config.yaml            # Risk thresholds, state boundaries
+├── main.py                # Pipeline entry point
 └── requirements.txt
 ```
 
-## Setup
+---
+
+## Quick Start
+
 ```bash
-python -m venv venv
-source venv/bin/activate
+git clone https://github.com/Momahmoses/land-tenure-dispute.git
+cd land-tenure-dispute
 pip install -r requirements.txt
 python main.py
 ```
 
-## Data Sources
-| Layer | Source |
-|-------|--------|
-| Land parcels | Nigeria Land Registry / MLHUD |
-| Boundary surveys | OSGOF (Office of the Surveyor General) |
-| Satellite imagery | Sentinel-2 via Google Earth Engine |
-| Ownership records | State Land Registries |
+---
 
-## Output
-- `outputs/land_dispute_map.html` — interactive dispute risk map
-- `outputs/land_dispute_report.csv` — per-parcel dispute probabilities
-- `outputs/boundary_overlap_analysis.png` — overlap vs risk charts
-- `outputs/feature_importance.png` — top dispute predictors
-- `outputs/roc_curve.png` — model performance
+## Data Sources
+
+- NLC Nigeria land parcel registry
+- State land administration offices (Plateau, Benue, Kaduna, Niger)
+- ACLED conflict event data (farmer-herder classification)
+- GRID3 Nigeria administrative boundaries
+
+---
 
 ## Author
-MOMAH MOSES .C.
+
+**Momah Moses** — Geospatial AI Engineer & Data Scientist
+[GitHub](https://github.com/Momahmoses) · [Portfolio](https://momahmoses-ng-gis-portfolio.hf.space)
