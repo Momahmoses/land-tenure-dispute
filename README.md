@@ -3,7 +3,7 @@
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://python.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-GIS + ML system that digitises land parcel boundaries, flags overlapping or contested parcels, and prioritises resolution cases — tackling Nigeria's land administration crisis with data-driven dispute detection and resolution scheduling.
+GIS + ML system that digitises land parcel boundaries, flags overlapping or contested parcels, and prioritises resolution cases, tackling Nigeria's land administration crisis with data-driven dispute detection and resolution scheduling.
 
 ---
 
@@ -75,5 +75,5 @@ python main.py
 
 ## Author
 
-**Momah Moses** — Geospatial AI Engineer & Data Scientist
+**Momah Moses**, Geospatial AI Engineer & Data Scientist
 [GitHub](https://github.com/Momahmoses) · [Portfolio](https://momahmoses-ng-gis-portfolio.hf.space)
